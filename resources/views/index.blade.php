@@ -1,100 +1,130 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="background-image grid grid-cols-1 m-auto">
-        <div class="flex text-gray-100 pt-10">
-            <div class="m-auto pt-4 pb-16 sm:m-auto w-4/5 block text-center">
-                <h1 class="sm:text-white text-5xl uppercase font-bold text-shadow-md pb-14">
-                    Do you want to become a developer?
-                </h1>
-                <a 
-                    href="/blog"
-                    class="text-center bg-gray-50 text-gray-700 py-2 px-4 font-bold text-xl uppercase">
-                    Read More
-                </a>
-            </div>
-        </div>
-    </div>
+<head>
+  <!-- Add the Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 
-    <div class="sm:grid grid-cols-2 gap-20 w-4/5 mx-auto py-15 border-b border-gray-200">
-        <div>
-            <img src="https://cdn.pixabay.com/photo/2014/05/03/01/03/laptop-336704_960_720.jpg" width="700" alt="">
-        </div>
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    @foreach ($latestPosts as $index => $post)
+      <div class="swiper-slide">
+        <a href="/blog/{{ $post['slug'] }}">
+          <img
+            src="/post_images/{{ $post['post_image'] }}"
+            alt="{{ $post['title'] }}"
+            class="block w-full carousel-image"
+          />
+        </a>
+      </div>
+    @endforeach
+  </div>
 
-        <div class="m-auto sm:m-auto text-left w-4/5 block">
-            <h2 class="text-3xl font-extrabold text-gray-600">
-                Struggling to be a better web developer?
-            </h2>
-            
-            <p class="py-8 text-gray-500 text-s">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus.
-            </p>
+  <!-- Add Pagination -->
+  <div class="swiper-pagination"></div>
 
-            <p class="font-extrabold text-gray-600 text-s pb-9">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente magnam vero nostrum! Perferendis eos molestias porro vero. Vel alias.
-            </p>
+  <!-- Add Navigation -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
 
-            <a 
-                href="/blog"
-                class="uppercase bg-blue-500 text-gray-100 text-s font-extrabold py-3 px-8 rounded-3xl">
-                Find Out More
-            </a>
-        </div>
-    </div>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  // Initialize Swiper
+  var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
 
-    <div class="text-center p-15 bg-black text-white">
-        <h2 class="text-2xl pb-5 text-l"> 
-            I'm an expert in...
+  // Automatically transition to the next slide every 5 seconds
+  setInterval(() => {
+    swiper.slideNext();
+  }, 5000);
+</script>
+
+<div class="sm:grid grid-cols-1 md:grid-cols-2 gap-4 w-11/12 mx-auto py-8 border-b border-gray-200">
+    <div class="m-auto text-left w-full">
+        <h2 class="text-2xl font-extrabold text-gray-600">
+            Penasaran dengan semua kegiatan KORMI Depok?
         </h2>
-
-        <span class="font-extrabold block text-4xl py-1">
-            Ux Design
-        </span>
-        <span class="font-extrabold block text-4xl py-1">
-            Project Management
-        </span>
-        <span class="font-extrabold block text-4xl py-1">
-            Digital Strategy
-        </span>
-        <span class="font-extrabold block text-4xl py-1">
-            Backend Development
-        </span>
-    </div>
-
-    <div class="text-center py-15">
-        <span class="uppercase text-s text-gray-400">
-            Blog
-        </span>
-
-        <h2 class="text-4xl font-bold py-10">
-            Recent Posts
-        </h2>
-
-        <p class="m-auto w-4/5 text-gray-500">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque exercitationem saepe enim veritatis, eos temporibus quaerat facere consectetur qui.
+        <p class="py-4 text-gray-500 text-s">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus.
         </p>
+        <p class="font-extrabold text-gray-600 text-s pb-4">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente magnam vero nostrum! Perferendis eos molestias porro vero. Vel alias.
+        </p>
+        <a href="/blog" class="uppercase bg-blue-500 text-gray-100 text-sm font-extrabold py-2 px-6 rounded-3xl transition duration-300 ease-in-out transform hover:shadow-lg hover:scale-105">
+        Lihat Semua Post
+    </a>
+
     </div>
+</div>
 
-    <div class="sm:grid grid-cols-2 w-4/5 m-auto">
-        <div class="flex bg-yellow-700 text-gray-100 pt-10">
-            <div class="m-auto pt-4 pb-16 sm:m-auto w-4/5 block">
-                <span class="uppercase text-xs">
-                    PHP
-                </span>
+<div class="text-center p-8 bg-black text-white">
+    <h2 class="text-xl pb-4"> 
+       Fokus KORMI Depok...
+    </h2>
+    <span class="font-extrabold block text-2xl py-1">
+        Olahraga
+    </span>
+    <span class="font-extrabold block text-2xl py-1">
+        Kepemudaan
+    </span>
+    <span class="font-extrabold block text-2xl py-1">
+        Rekreasi
+    </span>
+    <span class="font-extrabold block text-2xl py-1">
+        Kemasyarakatan
+    </span>
+</div>
 
-                <h3 class="text-xl font-bold py-10">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas necessitatibus dolorum error culpa laboriosam. Enim voluptas earum repudiandae consequuntur ad? Expedita labore aspernatur facilis quasi ex? Nemo hic placeat et?
-                </h3>
-
-                <a 
-                    href=""
-                    class="uppercase bg-transparent border-2 border-gray-100 text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl">
-                    Find Out More
+<div class="text-center py-8">
+    <span class="uppercase text-xs text-gray-400">
+        Sobat Sehat
+    </span>
+    <h2 class="text-2xl font-bold py-6">
+        Postingan Terakhir
+    </h2>
+    <div class="container mx-auto px-4">
+        {{-- Display the six latest posts --}}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            @foreach ($latestPosts as $post)
+                <a href="{{ route('blog.show', ['slug' => $post->slug]) }}" class="card-link">
+                    <div class="bg-white shadow-lg rounded-lg overflow-hidden card">
+                        <img src="{{ asset('post_images/' . $post->post_image) }}" alt="{{ $post->title }}" class="w-full h-48 object-cover object-center">
+                        <div class="p-4 card-content">
+                            <h5 class="text-lg font-bold mb-2">{{ $post->title }}</h5>
+                            <p class="text-gray-700 text-sm text-justify">{{ Illuminate\Support\Str::limit(strip_tags($post->description), 150) }}</p>
+                            @if ($post->categories->isNotEmpty())
+                                <div class="mt-2">
+                                    @foreach ($post->categories as $category)
+                                        <span class="inline-block bg-green-500 text-white px-2 py-1 rounded">{{ $category->name }}</span>
+                                    @endforeach
+                                </div>
+                            @endif
+                        </div>
+                    </div>
                 </a>
-            </div>
-        </div>
-        <div>
-            <img src="https://cdn.pixabay.com/photo/2014/05/03/01/03/laptop-336704_960_720.jpg" alt="">
+            @endforeach
         </div>
     </div>
+</div>
+<div class="flex items-center justify-center">
+    <a href="/blog" class="uppercase bg-blue-500 text-gray-100 text-sm font-extrabold py-2 px-6 rounded-3xl transition duration-300 ease-in-out transform hover:shadow-lg hover:scale-105">
+        Lihat Semua Post
+    </a>
+</div>
+
+
 @endsection

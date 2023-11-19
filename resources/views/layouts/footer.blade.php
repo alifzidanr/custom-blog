@@ -2,28 +2,29 @@
     <div class="sm:grid grid-cols-3 w-4/5 pb-10 m-auto border-b-2 border-gray-700">
         <div>
             <h3 class="text-l sm:font-bold text-gray-100">
-                Pages
+            Alamat
             </h3>
 
             <ul class="py-4 sm:text-s pt-4 text-gray-400">
                 <li class="pb-1">
                     <a href="/">
-                        Home
+                    Jalan Legong Raya No.44 Depok 2 Tengah
+
                     </a>
                 </li>
                 <li class="pb-1">
                     <a href="/blog">
-                        Blog
+                    Kecamatan Sukamajaya, Kelurahan Mekar Jaya.
                     </a>
                 </li>
                 <li class="pb-1">
                     <a href="/login">
-                        Login
+                    Kode Pos
                     </a>
                 </li>
                 <li class="pb-1">
                     <a href="/register">
-                        Register
+                    16411
                     </a>
                 </li>
             </ul>
@@ -31,28 +32,28 @@
 
         <div>
             <h3 class="text-l sm:font-bold text-gray-100">
-                Find Us
+                Kontak
             </h3>
 
             <ul class="py-4 sm:text-s pt-4 text-gray-400">
                 <li class="pb-1">
                     <a href="/">
-                        What we do
+                    Ketua Bidang Media Promosi dan Pariwisata
                     </a>
                 </li>
                 <li class="pb-1">
                     <a href="/">
-                        Address
+                    Bikman Afkan, S.H.
                     </a>
                 </li>
                 <li class="pb-1">
                     <a href="/">
-                        Phone
+                        Telepon
                     </a>
                 </li>
                 <li class="pb-1">
                     <a href="/">
-                        Contact
+                    0819-0826-9506
                     </a>
                 </li>
             </ul>
@@ -60,16 +61,16 @@
 
         <div>
             <h3 class="text-l sm:font-bold text-gray-100">
-                Latest posts
+                Sosial Media
             </h3>
 
             <ul class="py-4 sm:text-s pt-4 text-gray-400">
                 <li class="pb-1">
                     <a href="/">
-                        Why we love tech
+                        Facebook
                     </a>
                 </li>
-                <li class="pb-1">
+                <!-- <li class="pb-1">
                     <a href="/">
                         Why we love design
                     </a>
@@ -82,12 +83,12 @@
                 <li class="pb-1">
                     <a href="/">
                         Why PHP is the best
-                    </a>
+                    </a> -->
                 </li>
             </ul>
         </div>
     </div>
     <p class="w-25 w-4/5 pb-3 m-auto text-xs text-gray-100 pt-6">
-        Copyright 2017-2021 Code With Dary. All Rights Reserved
+    2023 Kormi Depok © All rights reserved
     </p>
 </footer>

@@ -18,7 +18,9 @@ class Posts extends Migration
             $table->string('slug');
             $table->string('title');
             $table->longText('description');
-            $table->string('image_path');
+            $table->string('post_image')->nullable()->default(null);
+            $table->string('image_path')->nullable()->default(null);
+            $table->dateTime('scheduled_at')->nullable();
             $table->timestamps();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
@@ -32,6 +34,7 @@ class Posts extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('posts');
     }
 }
+

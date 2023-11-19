@@ -23,3 +23,10 @@ Auth::routes();
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+// Add this to your web.php routes file
+Route::get('/blog/search', [PostsController::class, 'index'])->name('posts.index');
+
+Route::get('/blog/{slug}', [PostsController::class, 'show'])->name('blog.show');
+
+
+

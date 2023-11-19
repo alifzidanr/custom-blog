@@ -1,19 +1,23 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="w-4/5 m-auto text-left">
-    <div class="py-15">
-        <h1 class="text-6xl">
-            Update Post
-        </h1>
+<div class="w-full mx-4 my-4 text-left"> 
+<div class="py-8 px-4 md:px-8 flex items-center justify-between">
+<h1 class="text-3xl font-bold mb-4">
+Edit Post</h1>
+    </div>
+    <div class="py-8 px-4 md:px-0 flex items-center justify-between">
+    <a href="{{ url('/blog') }}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full ml-auto mr-10">
+    &larr; Daftar Berita
+</a>
     </div>
 </div>
 
 @if ($errors->any())
-    <div class="w-4/5 m-auto">
+    <div class="w-full mx-auto mb-4">
         <ul>
             @foreach ($errors->all() as $error)
-                <li class="w-1/5 mb-4 text-gray-50 bg-red-700 rounded-2xl py-4">
+                <li class="w-4/5 mb-4 text-white bg-red-700 rounded-lg py-2 px-4">
                     {{ $error }}
                 </li>
             @endforeach
@@ -21,31 +25,61 @@
     </div>
 @endif
 
-<div class="w-4/5 m-auto pt-20">
-    <form 
-        action="/blog/{{ $post->slug }}"
-        method="POST"
-        enctype="multipart/form-data">
-        @csrf
-        @method('PUT')
+<div class="w-full mx-auto pt-8">
+    <div class="bg-white rounded-lg shadow-lg p-6 md:p-10 mx-4">
+        <form action="/blog/{{ $post->slug }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            @method('PUT')
 
-        <input 
-            type="text"
-            name="title"
-            value="{{ $post->title }}"
-            class="bg-transparent block border-b-2 w-full h-20 text-6xl outline-none">
+            <input type="text" name="title" value="{{ $post->title }}" class="w-full mb-4 p-3 border border-gray-300 rounded-md">
 
-        <textarea 
-            name="description"
-            placeholder="Description..."
-            class="py-20 bg-transparent block border-b-2 w-full h-60 text-xl outline-none">{{ $post->description }}</textarea> 
+            <div class="mb-4">
+                <textarea name="description" id="description" class="w-full mb-4 p-3 border border-gray-300 rounded-md" rows="6"></textarea>
+            </div>
+            
+            <div class="mb-4">
+                <label for="tags" class="block text-lg mb-2">Select Tags:</label>
+                <select name="tags[]" id="tags" class="w-full py-2 px-3 border border-gray-300 rounded-md" multiple>
+                    @foreach($tags as $tag)
+                        <option value="{{ $tag->id }}" {{ in_array($tag->id, $post->tags->pluck('id')->toArray()) ? 'selected' : '' }}>{{ $tag->name }}</option>
+                    @endforeach
+                </select>
+            </div>
 
-        <button    
-            type="submit"
-            class="uppercase mt-15 bg-blue-500 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">
-            Submit Post
-        </button>
-    </form>
+            <div class="mb-4">
+                <label for="categories" class="block text-lg mb-2">Select Categories:</label>
+                <select name="categories[]" id="categories" class="w-full py-2 px-3 border border-gray-300 rounded-md" multiple>
+                    @foreach($categories as $category)
+                        <option value="{{ $category->id }}" {{ in_array($category->id, $post->categories->pluck('id')->toArray()) ? 'selected' : '' }}>
+                            {{ $category->name }}
+                        </option>
+                    @endforeach
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label for="scheduled_at" class="block text-lg mb-2">Scheduled Date and Time:</label>
+                <input type="datetime-local" id="scheduled_at" name="scheduled_at" class="w-full py-2 px-3 border border-gray-300 rounded-md" value="{{ $post->scheduled_at ? $post->scheduled_at->format('Y-m-d\TH:i') : '' }}">
+            </div>
+
+            <button type="submit" class="bg-blue-500 text-white text-base font-semibold py-2 px-4 rounded-full hover:bg-blue-600">
+    Simpan Post
+</button>
+
+        </form>
+    </div>
 </div>
 
+<script>
+    flatpickr("#scheduled_at", {
+        enableTime: true,
+        dateFormat: "Y-m-d H:i",
+    });
+
+// summernote
+    $(document).ready(function() {
+  $('#description').summernote(
+  );
+});
+</script>
 @endsection

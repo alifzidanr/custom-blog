@@ -13,3 +13,9 @@
     background-size: cover;
     height: 600px;
 }
+
+.carousel-image {
+    width: 1200px;
+    height: 600px;
+    object-fit: cover; /* This will make sure the image covers the specified dimensions */
+  }
