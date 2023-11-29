@@ -32,7 +32,7 @@ DB_USERNAME={USERNAME}
 DB_PASSWORD={PASSWORD}
 ```
 
-Migrate the tables
+Migrate tabel
 ```
 php artisan migrate
 ```
