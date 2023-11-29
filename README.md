@@ -6,7 +6,7 @@
 Setting di direktori lokal : <br>
 ```
 git clone git@github.com:alifzidanr/sobatsehat-blog.git
-cd laravel-8-complete-blog
+cd sobatsehat-blog
 cp .env.example .env
 composer install
 php artisan key:generate
