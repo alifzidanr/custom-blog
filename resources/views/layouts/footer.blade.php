@@ -38,22 +38,22 @@
             <ul class="py-4 sm:text-s pt-4 text-gray-400">
                 <li class="pb-1">
                     <a href="/">
-                    Ketua Bidang Media Promosi dan Pariwisata
+                    Contact-person
                     </a>
                 </li>
                 <li class="pb-1">
                     <a href="/">
-                    Bikman Afkan, S.H.
+                    --name--
                     </a>
                 </li>
                 <li class="pb-1">
                     <a href="/">
-                        Telepon
+                        --phone--
                     </a>
                 </li>
                 <li class="pb-1">
                     <a href="/">
-                    0819-0826-9506
+                    --others--
                     </a>
                 </li>
             </ul>
@@ -89,6 +89,6 @@
         </div>
     </div>
     <p class="w-25 w-4/5 pb-3 m-auto text-xs text-gray-100 pt-6">
-    2023 Kormi Depok © All rights reserved
+    2023 alifzidanr © All rights reserved
     </p>
 </footer>

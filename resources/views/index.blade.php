@@ -56,7 +56,7 @@
 <div class="sm:grid grid-cols-1 md:grid-cols-2 gap-4 w-11/12 mx-auto py-8 border-b border-gray-200">
     <div class="m-auto text-left w-full">
         <h2 class="text-2xl font-extrabold text-gray-600">
-            Penasaran dengan semua kegiatan KORMI Depok?
+            Cari tahu lebih lanjut ;)
         </h2>
         <p class="py-4 text-gray-500 text-s">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus.
@@ -73,25 +73,25 @@
 
 <div class="text-center p-8 bg-black text-white">
     <h2 class="text-xl pb-4"> 
-       Fokus KORMI Depok...
+       alifzidanr_custom blog
     </h2>
     <span class="font-extrabold block text-2xl py-1">
-        Olahraga
+        Free Posting
     </span>
     <span class="font-extrabold block text-2xl py-1">
-        Kepemudaan
+        Pagination
     </span>
     <span class="font-extrabold block text-2xl py-1">
-        Rekreasi
+        Index Post
     </span>
     <span class="font-extrabold block text-2xl py-1">
-        Kemasyarakatan
+        Filter Search
     </span>
 </div>
 
 <div class="text-center py-8">
     <span class="uppercase text-xs text-gray-400">
-        Sobat Sehat
+        alifzidanr_customblog
     </span>
     <h2 class="text-2xl font-bold py-6">
         Postingan Terakhir
